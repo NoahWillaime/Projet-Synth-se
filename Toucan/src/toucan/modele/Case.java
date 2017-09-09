@@ -21,12 +21,15 @@ public class Case {
 	
 	public int posX(int t){
 		for (Mouvement mv : this.m){
-			if (mv.gettempsAr() >= t){
-				if (mv.gettempsAr() == t){
+			if (mv.gettempsAr() > t){
+				if (mv.getxIn() < mv.getxAr())
+					return mv.getxIn() + (t - mv.gettempsIn());
+				else if (mv.getxIn() > mv.getxAr())
+					return mv.getxIn() - (t - mv.gettempsIn());
+				else if (mv.getxIn() == mv.getxAr())
 					return mv.getxAr();
-				} else {
-					return mv.getxIn()+(t - mv.getxIn());
-				}
+			} else if (mv.gettempsAr() == t){
+				return mv.getxAr();
 			}
 		}
 		return this.m.lastmoove().getxAr();
@@ -34,12 +37,15 @@ public class Case {
 	
 	public int posY(int t){
 		for (Mouvement mv : this.m){
-			if (mv.gettempsAr() >= t){
-				if (mv.gettempsAr() == t){
-					return mv.getyAr();
-				} else {
-					return mv.getyIn()+(t - mv.getyIn());
-				}
+			if (mv.gettempsAr() > t){
+				if (mv.getyIn() < mv.getyAr())
+					return mv.getyIn() + (t - mv.gettempsIn());
+				else if (mv.getyIn() > mv.getyAr())
+					return mv.getyIn() - (t - mv.gettempsIn());
+				else if (mv.getyIn() == mv.getyAr())
+					return mv.getyIn();
+			} else if (mv.gettempsAr() == t){
+				return mv.getyAr();
 			}
 		}
 		return this.m.lastmoove().getyAr();

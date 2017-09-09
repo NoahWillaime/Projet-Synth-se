@@ -16,8 +16,14 @@ public class LesCases {
 	
 	public void ajouter(Case c){
 		this.lesCases.add(c);
-		if (tempsMax < c.getTempsMax()){
-			tempsMax = c.getTempsMax();
+	}
+	
+	public void droite(int index, int temps){
+		if (index < lesCases.size()){
+			lesCases.get(index).droite(temps);
+			if (lesCases.get(index).getTempsMax() > tempsMax){
+				tempsMax = lesCases.get(index).getTempsMax();
+			}
 		}
 	}
 	
