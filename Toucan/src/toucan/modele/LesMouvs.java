@@ -40,9 +40,6 @@ public class LesMouvs implements Iterable<Mouvement>{
 
 	@Override
 	public String toString() {
-		for (Mouvement m : mooves){
-			m.toString();
-		}
 		return "LesMouvs [mooves=" + mooves + "]";
 	}
 }

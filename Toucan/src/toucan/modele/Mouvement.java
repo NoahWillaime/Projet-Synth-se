@@ -42,7 +42,6 @@ public abstract class Mouvement {
 	}
 	
 	public String toString(){
-		System.out.println(d);
-		return d+"";
+		return ("Temps Initial : "+tempsIn+"\n Durée : "+d+"\n Temps Arrivé : "+tempsAr+"\n x In / Ar : "+xIn+" / "+xAr+"\n y In / Ar : "+yIn+" / "+yAr);
 	}
 }
