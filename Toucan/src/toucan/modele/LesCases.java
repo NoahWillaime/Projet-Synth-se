@@ -27,6 +27,33 @@ public class LesCases {
 		}
 	}
 	
+	public void gauche(int index, int temps){
+		if (index < lesCases.size()){
+			lesCases.get(index).gauche(temps);
+			if (lesCases.get(index).getTempsMax() > tempsMax){
+				tempsMax = lesCases.get(index).getTempsMax();
+			}
+		}
+	}
+		
+	public void monter(int index, int temps){
+		if (index < lesCases.size()){
+			lesCases.get(index).monter(temps);
+			if (lesCases.get(index).getTempsMax() > tempsMax){
+				tempsMax = lesCases.get(index).getTempsMax();
+			}
+		}
+	}
+			
+	public void descendre(int index, int temps){
+		if (index < lesCases.size()){
+			lesCases.get(index).descendre(temps);
+			if (lesCases.get(index).getTempsMax() > tempsMax){
+				tempsMax = lesCases.get(index).getTempsMax();
+			}
+		}
+	}
+	
 	public int getMaxTemps(){
 		return tempsMax;
 	}

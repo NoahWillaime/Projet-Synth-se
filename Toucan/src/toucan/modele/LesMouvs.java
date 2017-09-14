@@ -26,6 +26,42 @@ public class LesMouvs implements Iterable<Mouvement>{
 		}
 	}
 	
+	public void gauche(int d){
+		if (mooves.isEmpty()){
+			Mouvement m = new MouvementGauche(0, d, xIn, yIn);
+			ajouter(m);
+		} else {
+			int index = mooves.size() - 1;
+			Mouvement temp = mooves.get(index);
+			Mouvement m = new MouvementGauche(temp.gettempsAr(), d, temp.getxAr(), temp.getyAr());
+			ajouter(m);
+		}
+	}	
+	
+	public void monter(int d){
+		if (mooves.isEmpty()){
+			Mouvement m = new MouvementMonter(0, d, xIn, yIn);
+			ajouter(m);
+		} else {
+			int index = mooves.size() - 1;
+			Mouvement temp = mooves.get(index);
+			Mouvement m = new MouvementMonter(temp.gettempsAr(), d, temp.getxAr(), temp.getyAr());
+			ajouter(m);
+		}
+	}
+	
+	public void descendre(int d){
+		if (mooves.isEmpty()){
+			Mouvement m = new MouvementDesc(0, d, xIn, yIn);
+			ajouter(m);
+		} else {
+			int index = mooves.size() - 1;
+			Mouvement temp = mooves.get(index);
+			Mouvement m = new MouvementDesc(temp.gettempsAr(), d, temp.getxAr(), temp.getyAr());
+			ajouter(m);
+		}
+	}
+	
 	public Mouvement lastmoove(){
 		return mooves.get(mooves.size() - 1);
 	}

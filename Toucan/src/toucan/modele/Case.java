@@ -19,6 +19,21 @@ public class Case {
 		this.tempMax += d;
 	}
 	
+	public void gauche(int d){
+		this.m.gauche(d);
+		this.tempMax += d;
+	}
+		
+	public void monter(int d){
+		this.m.monter(d);
+		this.tempMax += d;
+	}
+			
+	public void descendre(int d){
+		this.m.descendre(d);
+		this.tempMax += d;
+	}
+	
 	public int posX(int t){
 		for (Mouvement mv : this.m){
 			if (mv.gettempsAr() > t){
