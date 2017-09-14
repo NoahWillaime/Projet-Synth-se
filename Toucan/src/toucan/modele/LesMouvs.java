@@ -14,9 +14,9 @@ public class LesMouvs implements Iterable<Mouvement>{
 		this.yIn = y;
 	}
 	
-	public void droite(int d){
+	public void droite(int d, int delay){
 		if (mooves.isEmpty()){
-			Mouvement m = new MouvementDroite(0, d, xIn, yIn);
+			Mouvement m = new MouvementDroite(delay, d, xIn, yIn);
 			ajouter(m);
 		} else {
 			int index = mooves.size() - 1;
@@ -26,9 +26,9 @@ public class LesMouvs implements Iterable<Mouvement>{
 		}
 	}
 	
-	public void gauche(int d){
+	public void gauche(int d, int delay){
 		if (mooves.isEmpty()){
-			Mouvement m = new MouvementGauche(0, d, xIn, yIn);
+			Mouvement m = new MouvementGauche(delay, d, xIn, yIn);
 			ajouter(m);
 		} else {
 			int index = mooves.size() - 1;
@@ -38,9 +38,9 @@ public class LesMouvs implements Iterable<Mouvement>{
 		}
 	}	
 	
-	public void monter(int d){
+	public void monter(int d, int delay){
 		if (mooves.isEmpty()){
-			Mouvement m = new MouvementMonter(0, d, xIn, yIn);
+			Mouvement m = new MouvementMonter(delay, d, xIn, yIn);
 			ajouter(m);
 		} else {
 			int index = mooves.size() - 1;
@@ -50,9 +50,9 @@ public class LesMouvs implements Iterable<Mouvement>{
 		}
 	}
 	
-	public void descendre(int d){
+	public void descendre(int d, int delay){
 		if (mooves.isEmpty()){
-			Mouvement m = new MouvementDesc(0, d, xIn, yIn);
+			Mouvement m = new MouvementDesc(delay, d, xIn, yIn);
 			ajouter(m);
 		} else {
 			int index = mooves.size() - 1;

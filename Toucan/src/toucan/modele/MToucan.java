@@ -8,13 +8,8 @@ public class MToucan {
 	}
 	
 	public void creerLesMouvements(){
-		lesCases.descendre(0, 5);
-		lesCases.droite(0, 10);
-		lesCases.gauche(0, 8);
-		lesCases.monter(0, 6);
-		lesCases.monter(1, 2);
-		lesCases.monter(1, 7);
-		lesCases.monter(1, 10);
+		lesCases.monter(0, 10) ;
+		//lesCases.descendre(1, 10) ;
 	}
 	
 	public void ajouterCase(Case c){
@@ -26,12 +21,12 @@ public class MToucan {
 	}
 	
 	public static void main(String args[]){
-		MToucan mt = new MToucan(2);
-		Case c = new Case();
-		Case c2 = new Case(5, 5);
+		MToucan mt = new MToucan(1);
+		Case c = new Case(10, 10);
+		Case c2 = new Case(20, 10);
 		
+		c.addDelay(2);
 		mt.ajouterCase(c);
-		mt.ajouterCase(c2);
 		mt.creerLesMouvements();
 		System.out.println(mt.toString());
 	}
